@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "baslik": "Inception",
+        "tur": "Film",
+        "yil": 2010,
+        "puan": 8.8,
+        "poster": "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg",
+        "ozet": "Yetenekli bir hırsız olan Dom Cobb, insanların rüyalarına girerek bilinçaltlarından sırlarını çalmaktadır. Ancak bu sefer görevi farklıdır: Bir fikri çalmak değil, onu zihne yerleştirmek.",
+        "yonetmen": {
+            "ad": "Christopher Nolan",
+            "foto": "https://m.media-amazon.com/images/M/MV5BNjE3NDQyOTYyMV5BMl5BanBnXkFtZTcwODcyODU2Mw@@._V1_FMjpg_UX1000_.jpg"
+        },
+        "oyuncular": [
+            {"ad": "Leonardo DiCaprio", "foto": "https://m.media-amazon.com/images/M/MV5BMjI0MTg3MzI0M15BMl5BanBnXkFtZTcwMzQyODU2Mw@@._V1_FMjpg_UX1000_.jpg"},
+            {"ad": "Joseph Gordon-Levitt", "foto": "https://m.media-amazon.com/images/M/MV5BMTY3NTk0NDI3Ml5BMl5BanBnXkFtZTgwNDA3NjY0MjE@._V1_FMjpg_UX1000_.jpg"},
+            {"ad": "Elliot Page", "foto": "https://m.media-amazon.com/images/M/MV5BMTY0MTY4NjMyNF5BMl5BanBnXkFtZTcwOTg3ODcyMw@@._V1_FMjpg_UX1000_.jpg"}
+        ]
+    },
+    {
+        "id": 2,
+        "baslik": "Breaking Bad",
+        "tur": "Dizi",
+        "yil": 2008,
+        "puan": 9.5,
+        "poster": "https://m.media-amazon.com/images/M/MV5BYmQ4YWMxYjUtNjZmYi00MDQ1LWFhMjMtNjIxZDUwY2MwNjY2XkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_FMjpg_UX1000_.jpg",
+        "ozet": "Akciğer kanseri teşhisi konan bir kimya öğretmeni, ailesinin geleceğini garanti altına almak için eski bir öğrencisiyle birlikte uyuşturucu üretmeye başlar.",
+        "yonetmen": {
+            "ad": "Vince Gilligan",
+            "foto": "https://m.media-amazon.com/images/M/MV5BNzNlZTM4ODQtNDMzZC00Mzg1LWJjMTQtMjE5Y2Y1Nzk0YjY0XkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_FMjpg_UX1000_.jpg"
+        },
+        "oyuncular": [
+            {"ad": "Bryan Cranston", "foto": "https://m.media-amazon.com/images/M/MV5BMMTM5NDI2NDQ0NV5BMl5BanBnXkFtZTcwNDExNzQ2Nw@@._V1_FMjpg_UX1000_.jpg"},
+            {"ad": "Aaron Paul", "foto": "https://m.media-amazon.com/images/M/MV5BMTMzMTg0MjQ4N15BMl5BanBnXkFtZTcwMjE4MTQwMw@@._V1_FMjpg_UX1000_.jpg"},
+            {"ad": "Anna Gunn", "foto": "https://m.media-amazon.com/images/M/MV5BMTY3MzYwMzE4MF5BMl5BanBnXkFtZTcwMzE4MTQwMw@@._V1_FMjpg_UX1000_.jpg"}
+        ]
+    },
+    {
+        "id": 3,
+        "baslik": "Interstellar",
+        "tur": "Film",
+        "yil": 2014,
+        "puan": 8.7,
+        "poster": "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_FMjpg_UX1000_.jpg",
+        "ozet": "İnsanlığın sonunun yaklaştığı bir gelecekte, bir grup astronot yaşanabilir yeni bir gezegen bulmak için solucan deliğinden geçerek galaksiler arası bir yolculuğa çıkar.",
+        "yonetmen": {
+            "ad": "Christopher Nolan",
+            "foto": "https://m.media-amazon.com/images/M/MV5BNjE3NDQyOTYyMV5BMl5BanBnXkFtZTcwODcyODU2Mw@@._V1_FMjpg_UX1000_.jpg"
+        },
+        "oyuncular": [
+            {"ad": "Matthew McConaughey", "foto": "https://m.media-amazon.com/images/M/MV5BMTg0MDc3ODUwOV5BMl5BanBnXkFtZTgwMTk2NzYnOTE@._V1_FMjpg_UX1000_.jpg"},
+            {"ad": "Anne Hathaway", "foto": "https://m.media-amazon.com/images/M/MV5BNjQ5MjjkMTYtZjcxYi00ZWEzLTgyZjQtZTI1ZTRiNzJkM2IyXkEyXkFqcGdeQXVyMTE1MTYxNDAw._V1_FMjpg_UX1000_.jpg"},
+            {"ad": "Jessica Chastain", "foto": "https://m.media-amazon.com/images/M/MV5BMTU1MDM5NjczMF5BMl5BanBnXkFtZTcwOTYyNTk1OA@@._V1_FMjpg_UX1000_.jpg"}
+        ]
+    },
+    {
+        "id": 4,
+        "baslik": "Sherlock",
+        "tur": "Dizi",
+        "yil": 2010,
+        "puan": 9.1,
+        "poster": "https://m.media-amazon.com/images/M/MV5BMWY3NTljMjEtYzRiMi00NWM2LTkzNjItAwYzZjE3ZmUwNDczXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_FMjpg_UX1000_.jpg",
+        "ozet": "Modern günümüz Londra'sında geçen hikayede, eksantrik dedektif Sherlock Holmes ve doktor arkadaşı John Watson karmaşık suçları çözerler.",
+        "yonetmen": {
+            "ad": "Mark Gatiss",
+            "foto": "https://m.media-amazon.com/images/M/MV5BMTYxOTM3MTMzNl5BMl5BanBnXkFtZTcwOTk2MzQ2Mg@@._V1_FMjpg_UX1000_.jpg"
+        },
+        "oyuncular": [
+            {"ad": "Benedict Cumberbatch", "foto": "https://m.media-amazon.com/images/M/MV5BMjE0MDkzMDY5OV5BMl5BanBnXkFtZTgwMzc0OTU1MDI@._V1_FMjpg_UX1000_.jpg"},
+            {"ad": "Martin Freeman", "foto": "https://m.media-amazon.com/images/M/MV5BMjE0MjAwOTMzNV5BMl5BanBnXkFtZTcwMzYyODg3OA@@._V1_FMjpg_UX1000_.jpg"},
+            {"ad": "Andrew Scott", "foto": "https://m.media-amazon.com/images/M/MV5BMjExOTEzMzExN15BMl5BanBnXkFtZTgwOTI1ODYxMTE@._V1_FMjpg_UX1000_.jpg"}
+        ]
+    },
+    {
+        "id": 5,
+        "baslik": "Dune: Çöl Gezegeni",
+        "tur": "Film",
+        "yil": 2021,
+        "puan": 8.0,
+        "poster": "https://m.media-amazon.com/images/M/MV5BN2FjNmEyNWMtYzM0ZS00NjIyLTg5YzYtYTk0YjE0YzQ3MWM4XkEyXkFqcGdeQXVyNjY1MTg4Mzc@._V1_FMjpg_UX1000_.jpg",
+        "ozet": "Paul Atreides, ailesinin ve halkının geleceğini korumak için evrenin en tehlikeli gezegenine gitmek zorundadır. Ancak orada onları büyük bir ihanet beklemektedir.",
+        "yonetmen": {
+            "ad": "Denis Villeneuve",
+            "foto": "https://m.media-amazon.com/images/M/MV5BMjE0ODk2NzkyOV5BMl5BanBnXkFtZTcwMTc0NDAxMw@@._V1_FMjpg_UX1000_.jpg"
+        },
+        "oyuncular": [
+            {"ad": "Timothée Chalamet", "foto": "https://m.media-amazon.com/images/M/MV5BMTk1NjYzMzYyNF5BMl5BanBnXkFtZTgwMzc3MTQ5MDI@._V1_FMjpg_UX1000_.jpg"},
+            {"ad": "Zendaya", "foto": "https://m.media-amazon.com/images/M/MV5BMjAxZTk4NDAtYjE3Mi00OTk5LWFjY2ItMDFlM2JmNjhmZGI5XkEyXkFqcGdeQXVyMTE1MTYxNDAw._V1_FMjpg_UX1000_.jpg"},
+            {"ad": "Oscar Isaac", "foto": "https://m.media-amazon.com/images/M/MV5BMTQ2ODE2NDQ5OF5BMl5BanBnXkFtZTcwOTU3OTM1OQ@@._V1_FMjpg_UX1000_.jpg"}
+        ]
+    }
+]

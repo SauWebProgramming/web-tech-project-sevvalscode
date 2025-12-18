@@ -1,4 +1,4 @@
-
+/* 1. TEMEL AYARLAR */
 * {
     margin: 0;
     padding: 0;
@@ -7,18 +7,19 @@
 }
 
 body {
-    background-color: #121212; 
+    background-color: #121212;
     color: #ffffff;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
+/* 2. HEADER */
 header {
     background-color: #000000;
     padding: 20px 40px;
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center;
     box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     position: sticky;
@@ -27,7 +28,7 @@ header {
 }
 
 .logo h1 {
-    color: #e50914; 
+    color: #e50914;
     font-size: 2.5rem;
     font-weight: bold;
     cursor: pointer;
@@ -57,6 +58,7 @@ header {
     padding: 0 10px;
 }
 
+/* 3. MENÜ */
 nav {
     display: flex;
     justify-content: center;
@@ -72,11 +74,11 @@ nav {
     padding: 10px 25px;
     border-radius: 30px;
     cursor: pointer;
-    font-size: 1rem;
     font-weight: bold;
+    transition: all 0.3s ease;
 }
 
-.filter-btn.active {
+.filter-btn:hover, .filter-btn.active {
     background-color: #e50914;
     border-color: #e50914;
     color: white;
@@ -87,11 +89,127 @@ nav {
     color: #ffd700;
 }
 
+/* 4. ANA İÇERİK */
+main {
+    padding: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); 
+    gap: 30px;
+    padding-bottom: 80px;
+}
+
+/* 5. KART TASARIMI */
+.card {
+    background-color: #222;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(229, 9, 20, 0.4);
+}
+
+.card img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+}
+
+.card-info {
+    padding: 15px;
+}
+
+.card-info h3 {
+    font-size: 1.1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 5px;
+}
+
+.card-info .meta {
+    display: flex;
+    justify-content: space-between;
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+.rating {
+    color: #46d369;
+}
+
+/* 6. MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #181818;
+    padding: 30px;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 900px;
+    display: flex;
+    gap: 30px;
+    position: relative;
+    border: 1px solid #333;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: #aaa;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.modal-left img {
+    width: 300px;
+    border-radius: 10px;
+}
+
+.modal-right {
+    flex: 1;
+    color: white;
+}
+
+.cast-list {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.cast-member img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* 7. FOOTER */
 footer {
-    margin-top: auto; 
+    margin-top: auto;
     text-align: center;
     padding: 20px;
     background-color: #000;
     color: #555;
-    font-size: 0.9rem;
+}
+
+/* Mobil */
+@media (max-width: 768px) {
+    .modal-content { flex-direction: column; height: 90vh; overflow-y: auto; }
+    .modal-left img { width: 100%; }
 }
