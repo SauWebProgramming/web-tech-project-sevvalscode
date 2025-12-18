@@ -17,7 +17,7 @@ body {
 /* 2. HEADER */
 header {
     background-color: #000000;
-    padding: 20px 40px;
+    padding: 15px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -29,30 +29,22 @@ header {
 
 .logo h1 {
     color: #e50914;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: bold;
     cursor: pointer;
 }
-/* --- YENİLENMİŞ ARAMA KUTUSU TASARIMI --- */
+
+/* Arama Kutusu */
 .search-container {
     display: flex;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.1); /* Hafif şeffaf beyaz */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* İnce çerçeve */
-    border-radius: 50px; /* Tam yuvarlak kenarlar (Hap şekli) */
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
     padding: 5px 15px;
-    transition: all 0.3s ease;
     gap: 10px;
 }
 
-/* Tıklayınca parlasın */
-.search-container:focus-within {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-color: #e50914; /* Netflix kırmızısı */
-    box-shadow: 0 0 10px rgba(229, 9, 20, 0.5);
-}
-
-/* Yıl Seçim Kutusu (Select) */
 #yearFilter {
     background-color: transparent;
     color: #ddd;
@@ -60,17 +52,12 @@ header {
     outline: none;
     font-size: 0.9rem;
     cursor: pointer;
-    border-right: 1px solid #555; /* Sağ tarafına çizgi çek */
+    border-right: 1px solid #555;
     padding-right: 10px;
     font-weight: bold;
 }
+#yearFilter option { background-color: #000; color: white; }
 
-#yearFilter option {
-    background-color: #000; /* Açılan liste siyah olsun */
-    color: white;
-}
-
-/* Yazı Alanı */
 .search-container input {
     background: transparent;
     border: none;
@@ -81,11 +68,6 @@ header {
     font-size: 0.95rem;
 }
 
-.search-container input::placeholder {
-    color: #aaa;
-}
-
-/* Arama Butonu */
 .search-container button {
     background: transparent;
     border: none;
@@ -94,29 +76,26 @@ header {
     font-size: 1.2rem;
     transition: transform 0.2s;
 }
-
-.search-container button:hover {
-    transform: scale(1.2);
-    color: white;
-}
+.search-container button:hover { transform: scale(1.1); }
 
 /* 3. MENÜ */
 nav {
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 10px;
     padding: 20px;
-    background-color: #1f1f1f;
+    background-color: #1a1a1a;
+    flex-wrap: wrap;
 }
 
 .filter-btn {
     background-color: transparent;
-    border: 2px solid #555;
+    border: 1px solid #444;
     color: #ccc;
-    padding: 10px 25px;
-    border-radius: 30px;
+    padding: 8px 20px;
+    border-radius: 20px;
     cursor: pointer;
-    font-weight: bold;
+    font-weight: 600;
     transition: all 0.3s ease;
 }
 
@@ -126,46 +105,44 @@ nav {
     color: white;
 }
 
-.fav-btn {
-    border-color: #ffd700;
-    color: #ffd700;
-}
+.fav-btn { border-color: #ffd700; color: #ffd700; }
+.fav-btn:hover, .fav-btn.active { background-color: #ffd700; color: black; }
 
 /* 4. ANA İÇERİK */
 main {
-    padding: 40px;
+    padding: 30px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); 
-    gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+    gap: 25px;
     padding-bottom: 80px;
 }
 
 /* 5. KART TASARIMI */
 .card {
     background-color: #222;
-    border-radius: 10px;
+    border-radius: 8px;
     overflow: hidden;
+    position: relative;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(229, 9, 20, 0.4);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+    z-index: 10;
 }
 
 .card img {
     width: 100%;
-    height: 320px;
+    height: 300px;
     object-fit: cover;
 }
 
-.card-info {
-    padding: 15px;
-}
+.card-info { padding: 12px; }
 
 .card-info h3 {
-    font-size: 1.1rem;
+    font-size: 1rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -176,109 +153,167 @@ main {
     display: flex;
     justify-content: space-between;
     color: #aaa;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
-.rating {
-    color: #46d369;
+/* Kalp İkonu */
+.fav-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(0,0,0,0.6);
+    padding: 6px;
+    border-radius: 50%;
+    transition: 0.2s;
+    z-index: 20;
+    cursor: pointer;
 }
+.fav-icon:hover { transform: scale(1.1); color: white; }
+.fav-icon.active { color: #e50914; text-shadow: 0 0 10px red; }
 
-/* 6. MODAL */
+/* 6. MODAL (PENCERE) */
 .modal {
     display: none;
     position: fixed;
-    z-index: 1000;
+    z-index: 2000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.9);
+    background-color: rgba(0,0,0,0.85);
+    backdrop-filter: blur(5px);
     justify-content: center;
     align-items: center;
+    padding: 20px;
 }
 
 .modal-content {
-    background-color: #181818;
-    padding: 30px;
+    background-color: #1a1a1a;
+    padding: 25px;
     border-radius: 15px;
-    width: 80%;
-    max-width: 900px;
-    display: flex;
-    gap: 30px;
+    width: 100%;
+    max-width: 650px;
+    max-height: 85vh;
+    overflow-y: auto;
     position: relative;
     border: 1px solid #333;
+    box-shadow: 0 0 40px rgba(229, 9, 20, 0.3);
+    animation: popUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popUp {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
 }
 
 .close-btn {
     position: absolute;
     top: 15px;
-    right: 25px;
+    right: 20px;
+    font-size: 2rem;
     color: #aaa;
-    font-size: 30px;
     cursor: pointer;
+    z-index: 10;
+}
+.close-btn:hover { color: white; }
+
+.modal-body-wrapper {
+    display: flex;
+    gap: 25px;
+    flex-direction: row;
 }
 
 .modal-left img {
-    width: 300px;
-    border-radius: 10px;
+    width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
 }
 
-.modal-right {
-    flex: 1;
+.modal-right { flex: 1; color: #ddd; }
+
+.modal-right h2 {
     color: white;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
 }
 
+/* --- TIKLANABİLİR YÖNETMEN/YAZAR ALANI --- */
+.creator-section {
+    margin: 15px 0;
+    padding: 10px;
+    background: #252525;
+    border-radius: 8px;
+    cursor: pointer !important; /* İmleç kesinlikle el olacak */
+    transition: 0.2s;
+    width: fit-content;
+    border: 1px solid transparent;
+}
+.creator-section:hover {
+    border-color: #e50914;
+    background: #303030;
+    transform: scale(1.02);
+}
+
+/* Oyuncular */
 .cast-list {
     display: flex;
-    gap: 10px;
-    margin-top: 15px;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 10px;
 }
+
+.cast-member {
+    text-align: center;
+    cursor: pointer !important; /* İmleç kesinlikle el olacak */
+    transition: 0.2s;
+}
+.cast-member:hover img { border-color: #e50914; }
 
 .cast-member img {
-    width: 50px;
-    height: 50px;
+    width: 55px !important;
+    height: 55px !important;
     border-radius: 50%;
     object-fit: cover;
+    border: 2px solid #444;
+}
+.cast-member p {
+    font-size: 0.75rem;
+    margin-top: 5px;
+    max-width: 60px;
 }
 
-/* 7. FOOTER */
+/* Geri Dön Butonu */
+.back-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #e50914;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+.back-btn:hover { background-color: #ff0f1f; }
+
+/* Footer */
 footer {
     margin-top: auto;
     text-align: center;
     padding: 20px;
-    background-color: #000;
-    color: #555;
+    color: #666;
+    font-size: 0.85rem;
 }
 
 /* Mobil */
-@media (max-width: 768px) {
-    .modal-content { flex-direction: column; height: 90vh; overflow-y: auto; }
-    .modal-left img { width: 100%; }
-}
-
-
-/* --- FAVORİ BUTONU TASARIMI --- */
-.fav-icon {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 1.5rem;
-    color: rgba(255, 255, 255, 0.7);
-    cursor: pointer;
-    z-index: 20; /* Resmin üzerinde dursun */
-    transition: transform 0.2s, color 0.2s;
-    background: rgba(0,0,0,0.5); /* Arkası hafif siyah olsun ki görünsün */
-    padding: 8px;
-    border-radius: 50%;
-}
-
-.fav-icon:hover {
-    transform: scale(1.2);
-    color: white;
-}
-
-/* Favoriye eklenmişse Kırmızı olsun */
-.fav-icon.active {
-    color: #e50914; /* Netflix kırmızısı */
-    text-shadow: 0 0 10px rgba(229, 9, 20, 0.8);
+@media (max-width: 600px) {
+    .modal-body-wrapper { flex-direction: column; align-items: center; text-align: center; }
+    .modal-left img { width: 160px; }
+    .cast-list { justify-content: center; }
 }
