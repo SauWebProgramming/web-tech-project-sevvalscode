@@ -68,16 +68,6 @@ header {
     font-size: 0.95rem;
 }
 
-.search-container button {
-    background: transparent;
-    border: none;
-    color: #e50914;
-    cursor: pointer;
-    font-size: 1.2rem;
-    transition: transform 0.2s;
-}
-.search-container button:hover { transform: scale(1.1); }
-
 /* 3. MENÜ */
 nav {
     display: flex;
@@ -115,6 +105,15 @@ main {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
     gap: 25px;
     padding-bottom: 80px;
+}
+
+/* İçerik Bulunamadı Mesajı (JS'den Class Olarak Ekleniyor) */
+.no-content {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #777;
+    margin-top: 20px;
+    font-size: 1.2rem;
 }
 
 /* 5. KART TASARIMI */
@@ -156,6 +155,11 @@ main {
     font-size: 0.8rem;
 }
 
+/* Puan Renkleri (JS'den Kontrol Ediliyor) */
+.score-high { color: #46d369; font-weight: bold; }
+.score-medium { color: #ffd700; font-weight: bold; }
+.score-low { color: #e50914; font-weight: bold; }
+
 /* Kalp İkonu */
 .fav-icon {
     position: absolute;
@@ -173,7 +177,7 @@ main {
 .fav-icon:hover { transform: scale(1.1); color: white; }
 .fav-icon.active { color: #e50914; text-shadow: 0 0 10px red; }
 
-/* 6. MODAL (PENCERE) */
+/* 6. MODAL (PENCERE) - GÜNCELLENMİŞ TASARIM */
 .modal {
     display: none;
     position: fixed;
@@ -182,30 +186,45 @@ main {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.85);
-    backdrop-filter: blur(5px);
+    /* Arka plan daha koyu ve bulanık */
+    background-color: rgba(0, 0, 0, 0.7); 
+    backdrop-filter: blur(8px); 
     justify-content: center;
     align-items: center;
     padding: 20px;
+    animation: fadeIn 0.3s ease-out forwards;
 }
 
 .modal-content {
     background-color: #1a1a1a;
-    padding: 25px;
+    padding: 30px;
     border-radius: 15px;
-    width: 100%;
-    max-width: 650px;
+    width: 90%;
+    max-width: 700px; /* Geniş ekranlarda çok yayılmasın */
     max-height: 85vh;
     overflow-y: auto;
     position: relative;
-    border: 1px solid #333;
-    box-shadow: 0 0 40px rgba(229, 9, 20, 0.3);
-    animation: popUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    /* Alttan yukarı kayma animasyonu */
+    transform: translateY(50px);
+    opacity: 0;
+    animation: slideUp 0.4s cubic-bezier(0.19, 1, 0.22, 1) 0.1s forwards;
 }
 
-@keyframes popUp {
-    0% { transform: scale(0.5); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
+/* Modal Scrollbar */
+.modal-content::-webkit-scrollbar { width: 8px; }
+.modal-content::-webkit-scrollbar-track { background: #1a1a1a; }
+.modal-content::-webkit-scrollbar-thumb { background-color: #444; border-radius: 4px; }
+
+@keyframes fadeIn {
+    from { background-color: rgba(0,0,0,0); }
+    to { background-color: rgba(0,0,0,0.7); }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
 
 .close-btn {
@@ -223,12 +242,16 @@ main {
     display: flex;
     gap: 25px;
     flex-direction: row;
+    align-items: flex-start; /* Resmi yukarı hizala */
 }
 
+/* Modal İçindeki Resim (Küçültüldü) */
 .modal-left img {
-    width: 200px;
+    width: 350px;
+    height: auto;
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    object-fit: cover;
 }
 
 .modal-right { flex: 1; color: #ddd; }
@@ -241,13 +264,42 @@ main {
     padding-bottom: 10px;
 }
 
-/* --- TIKLANABİLİR YÖNETMEN/YAZAR ALANI --- */
+/* Modal Etiketleri (Yıl, Tür vb.) */
+.modal-tags {
+    display: flex;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.tag-badge {
+    border: 1px solid #444;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+/* Açıklama Metni */
+.modal-desc {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Bölüm Başlıkları (Yönetmen, Kadro vb.) */
+.section-title {
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    margin-top: 15px;
+}
+
+/* Yaratıcı / Yönetmen Alanı (Tıklanabilir) */
 .creator-section {
-    margin: 15px 0;
     padding: 10px;
     background: #252525;
     border-radius: 8px;
-    cursor: pointer !important; /* İmleç kesinlikle el olacak */
+    cursor: pointer;
     transition: 0.2s;
     width: fit-content;
     border: 1px solid transparent;
@@ -258,7 +310,25 @@ main {
     transform: scale(1.02);
 }
 
-/* Oyuncular */
+.creator-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.creator-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.creator-name {
+    font-weight: bold;
+    color: white;
+}
+
+/* Oyuncular Listesi */
 .cast-list {
     display: flex;
     gap: 15px;
@@ -268,14 +338,14 @@ main {
 
 .cast-member {
     text-align: center;
-    cursor: pointer !important; /* İmleç kesinlikle el olacak */
+    cursor: pointer;
     transition: 0.2s;
 }
 .cast-member:hover img { border-color: #e50914; }
 
 .cast-member img {
-    width: 55px !important;
-    height: 55px !important;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid #444;
@@ -288,7 +358,7 @@ main {
 
 /* Geri Dön Butonu */
 .back-btn {
-    margin-top: 20px;
+    margin-top: 25px;
     padding: 10px 20px;
     background-color: #e50914;
     color: white;
@@ -313,7 +383,17 @@ footer {
 
 /* Mobil */
 @media (max-width: 600px) {
-    .modal-body-wrapper { flex-direction: column; align-items: center; text-align: center; }
-    .modal-left img { width: 160px; }
+    .modal-content {
+        padding: 20px;
+        width: 95%;
+    }
+    .modal-body-wrapper { 
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center; 
+    }
+    .modal-left img { width: 140px; margin-bottom: 15px; }
     .cast-list { justify-content: center; }
+    .modal-tags { justify-content: center; }
+    .creator-section { margin: 0 auto; } /* Mobilde ortala */
 }

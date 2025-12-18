@@ -19,7 +19,7 @@ async function verileriGetir() {
         ekranaBas(allMedia); 
     } catch (hata) {
         console.error('Hata:', hata);
-        mediaContainer.innerHTML = '<h2>Veriler yüklenirken hata oluştu.</h2>';
+        mediaContainer.innerHTML = '<h2 class="no-content">Veriler yüklenirken hata oluştu.</h2>';
     }
 }
 
@@ -45,18 +45,23 @@ function yillariDoldur() {
 function ekranaBas(liste) {
     mediaContainer.innerHTML = '';
     if (liste.length === 0) {
-        mediaContainer.innerHTML = '<h3 style="grid-column: 1/-1; text-align:center; color:#777;">İçerik bulunamadı.</h3>';
+        // Inline style yerine class kullanıldı
+        mediaContainer.innerHTML = '<h3 class="no-content">İçerik bulunamadı.</h3>';
         return;
     }
 
     liste.forEach(medya => {
-        const kart = document.createElement('div');
+        const kart = document.createElement('article'); // div yerine semantic element
         kart.classList.add('card');
         
         const isFav = favoriler.includes(medya.id);
         const kalpSinifi = isFav ? 'fa-solid' : 'fa-regular'; 
         const aktifSinif = isFav ? 'active' : '';
-        const puanRenk = medya.puan >= 8 ? '#46d369' : (medya.puan >= 6 ? '#ffd700' : '#e50914');
+        
+        // Puan rengini CSS class ile belirleme
+        let puanClass = 'score-low';
+        if (medya.puan >= 8) puanClass = 'score-high';
+        else if (medya.puan >= 6) puanClass = 'score-medium';
 
         kart.innerHTML = `
             <i class="${kalpSinifi} fa-heart fav-icon ${aktifSinif}" onclick="favoriToggle(event, ${medya.id})"></i>
@@ -66,7 +71,7 @@ function ekranaBas(liste) {
                 <div class="meta">
                     <span>${medya.yil}</span>
                     <span>${medya.tur}</span>
-                    <span style="color:${puanRenk}">★ ${medya.puan}</span>
+                    <span class="${puanClass}">★ ${medya.puan}</span>
                 </div>
             </div>
         `;
@@ -94,6 +99,7 @@ function favoriToggle(event, id) {
     kalp.classList.toggle('fa-regular');
     kalp.classList.toggle('active');
 
+    // Eğer favoriler sekmesindeysek listeyi anlık güncelle
     const aktifButon = document.querySelector('.filter-btn.active');
     if (aktifButon && aktifButon.getAttribute('data-category') === 'favorites') {
         ekranaBas(allMedia.filter(item => favoriler.includes(item.id)));
@@ -105,6 +111,11 @@ function detayGoster(medya) {
     const yaraticiBaslik = medya.tur === 'Kitap' ? 'Yazar' : 'Yönetmen';
     const yaraticiBilgi = medya.tur === 'Kitap' ? medya.yazar : medya.yonetmen;
 
+    // Puan class belirleme
+    let puanClass = 'score-low';
+    if (medya.puan >= 8) puanClass = 'score-high';
+    else if (medya.puan >= 6) puanClass = 'score-medium';
+
     let kadroHTML = '';
     if (medya.oyuncular) {
         kadroHTML = medya.oyuncular.map(kisi => `
@@ -115,6 +126,7 @@ function detayGoster(medya) {
         `).join('');
     }
 
+    // Inline style'lar temizlendi, class'lar eklendi
     modalBody.innerHTML = `
         <div class="modal-body-wrapper">
             <div class="modal-left">
@@ -122,22 +134,24 @@ function detayGoster(medya) {
             </div>
             <div class="modal-right">
                 <h2>${medya.baslik}</h2>
-                <div class="modal-tags" style="font-size:0.9rem; color:#aaa; margin-bottom:15px;">
-                    <span style="border:1px solid #444; padding:2px 8px; border-radius:4px;">${medya.yil}</span>
-                    <span style="border:1px solid #444; padding:2px 8px; border-radius:4px;">${medya.tur}</span>
-                    <span style="color:#46d369; font-weight:bold; margin-left:5px;">★ ${medya.puan}</span>
+                
+                <div class="modal-tags">
+                    <span class="tag-badge">${medya.yil}</span>
+                    <span class="tag-badge">${medya.tur}</span>
+                    <span class="${puanClass}">★ ${medya.puan}</span>
                 </div>
-                <p style="line-height:1.6;">${medya.ozet}</p>
+
+                <p class="modal-desc">${medya.ozet}</p>
                 
                 <div class="creator-section" onclick="kisiyeGoreFiltrele('${yaraticiBilgi.ad.replace(/'/g, "\\'")}')" title="Diğer eserlerini gör">
-                    <h4 style="color:#aaa; font-size:0.9rem; margin-bottom:5px;">${yaraticiBaslik}</h4>
-                    <div style="display:flex; align-items:center; gap:10px;">
-                        <img src="${yaraticiBilgi.foto}" style="width:50px; height:50px; border-radius:50%; object-fit:cover;">
-                        <span style="font-weight:bold; color:white;">${yaraticiBilgi.ad}</span>
+                    <h4 class="section-title">${yaraticiBaslik}</h4>
+                    <div class="creator-content">
+                        <img class="creator-img" src="${yaraticiBilgi.foto}">
+                        <span class="creator-name">${yaraticiBilgi.ad}</span>
                     </div>
                 </div>
 
-                ${kadroHTML ? `<h4 style="color:#aaa; margin-top:20px;">Kadro</h4><div class="cast-list">${kadroHTML}</div>` : ''}
+                ${kadroHTML ? `<h4 class="section-title">Kadro</h4><div class="cast-list">${kadroHTML}</div>` : ''}
                 
                 <button class="back-btn" onclick="document.getElementById('modal').style.display='none'">
                     <i class="fa-solid fa-arrow-left"></i> Geri Dön
@@ -153,6 +167,8 @@ function kisiyeGoreFiltrele(isim) {
     modal.style.display = 'none';
     searchInput.value = isim;
     aramaYap(isim);
+    // Sayfayı yukarı kaydır
+    mediaContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 // 7. ARAMA VE FİLTRELEME
