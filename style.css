@@ -255,3 +255,30 @@ footer {
     .modal-content { flex-direction: column; height: 90vh; overflow-y: auto; }
     .modal-left img { width: 100%; }
 }
+
+
+/* --- FAVORİ BUTONU TASARIMI --- */
+.fav-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    z-index: 20; /* Resmin üzerinde dursun */
+    transition: transform 0.2s, color 0.2s;
+    background: rgba(0,0,0,0.5); /* Arkası hafif siyah olsun ki görünsün */
+    padding: 8px;
+    border-radius: 50%;
+}
+
+.fav-icon:hover {
+    transform: scale(1.2);
+    color: white;
+}
+
+/* Favoriye eklenmişse Kırmızı olsun */
+.fav-icon.active {
+    color: #e50914; /* Netflix kırmızısı */
+    text-shadow: 0 0 10px rgba(229, 9, 20, 0.8);
+}

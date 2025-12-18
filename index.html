@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medya Kütüphanesi</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
@@ -26,13 +27,17 @@
         </div>
     </header>
 
-    <nav>
-        <button class="filter-btn active" data-category="all">Hepsi</button>
-        <button class="filter-btn" data-category="Film">Filmler</button>
-        <button class="filter-btn" data-category="Dizi">Diziler</button>
-        <button class="filter-btn" data-category="Kitap">Kitaplar</button>
-        <button class="filter-btn fav-btn" id="showFavorites">Favorilerim ❤️</button>
-    </nav>
+  <nav>
+    <button class="filter-btn active" data-category="all">Hepsi</button>
+    
+    <button class="filter-btn" data-category="Film">Filmler</button>
+    <button class="filter-btn" data-category="Dizi">Diziler</button>
+    <button class="filter-btn" data-category="Kitap">Kitaplar</button>
+    
+    <button class="filter-btn fav-btn" id="favBtn" data-category="favorites">
+        Favorilerim ❤️
+    </button>
+</nav>
 
     <main id="mediaContainer">
         </main>
