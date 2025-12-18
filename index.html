@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medya Kütüphanesi</title>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>MyMedia</h1>
+        </div>
+        
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Film, dizi veya kitap ara...">
+            <button id="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+    </header>
+
+    <nav>
+        <button class="filter-btn active" data-category="all">Hepsi</button>
+        <button class="filter-btn" data-category="Film">Filmler</button>
+        <button class="filter-btn" data-category="Dizi">Diziler</button>
+        <button class="filter-btn" data-category="Kitap">Kitaplar</button>
+        <button class="filter-btn fav-btn" id="showFavorites">Favorilerim ❤️</button>
+    </nav>
+
+    <main id="mediaContainer">
+        </main>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div id="modal-body">
+                </gdiv>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 MyMedia- Şevval Koca</p>
+    </footer>
+
+</body>
+</html>
