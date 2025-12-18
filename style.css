@@ -33,29 +33,71 @@ header {
     font-weight: bold;
     cursor: pointer;
 }
-
+/* --- YENİLENMİŞ ARAMA KUTUSU TASARIMI --- */
 .search-container {
     display: flex;
-    background-color: #333;
-    border-radius: 5px;
-    padding: 5px;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1); /* Hafif şeffaf beyaz */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* İnce çerçeve */
+    border-radius: 50px; /* Tam yuvarlak kenarlar (Hap şekli) */
+    padding: 5px 15px;
+    transition: all 0.3s ease;
+    gap: 10px;
 }
 
+/* Tıklayınca parlasın */
+.search-container:focus-within {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: #e50914; /* Netflix kırmızısı */
+    box-shadow: 0 0 10px rgba(229, 9, 20, 0.5);
+}
+
+/* Yıl Seçim Kutusu (Select) */
+#yearFilter {
+    background-color: transparent;
+    color: #ddd;
+    border: none;
+    outline: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border-right: 1px solid #555; /* Sağ tarafına çizgi çek */
+    padding-right: 10px;
+    font-weight: bold;
+}
+
+#yearFilter option {
+    background-color: #000; /* Açılan liste siyah olsun */
+    color: white;
+}
+
+/* Yazı Alanı */
 .search-container input {
     background: transparent;
     border: none;
     color: white;
-    padding: 10px;
+    padding: 8px;
     outline: none;
-    width: 250px;
+    width: 200px;
+    font-size: 0.95rem;
 }
 
+.search-container input::placeholder {
+    color: #aaa;
+}
+
+/* Arama Butonu */
 .search-container button {
     background: transparent;
     border: none;
-    color: white;
+    color: #e50914;
     cursor: pointer;
-    padding: 0 10px;
+    font-size: 1.2rem;
+    transition: transform 0.2s;
+}
+
+.search-container button:hover {
+    transform: scale(1.2);
+    color: white;
 }
 
 /* 3. MENÜ */

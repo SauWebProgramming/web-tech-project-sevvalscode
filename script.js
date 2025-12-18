@@ -1,113 +1,98 @@
-// HTML sayfasındaki önemli yerleri seçip değişkenlere atıyoruz
 const mediaContainer = document.getElementById('mediaContainer');
 const searchInput = document.getElementById('searchInput');
-const searchBtn = document.getElementById('searchBtn');
 const filterBtns = document.querySelectorAll('.filter-btn');
 const modal = document.getElementById('modal');
 const modalBody = document.getElementById('modal-body');
 const closeBtn = document.querySelector('.close-btn');
+const yearFilter = document.getElementById('yearFilter');
 
-// Tüm verileri bu boş kutuda tutacağız
 let allMedia = [];
 
-// 1. ADIM: Verileri JSON dosyasından çekip getiren fonksiyon (Garson)
-// Ödevde istenen "async/await" ve "fetch" yapısı
+// Verileri Getir
 async function verileriGetir() {
     try {
-        const cevap = await fetch('data.json'); // Mutfağa git
-        const veri = await cevap.json(); // Tepsiyi al
+        const cevap = await fetch('data.json');
+        const veri = await cevap.json();
+        allMedia = veri;
         
-        allMedia = veri; // Verileri global değişkenimize kaydet
-        ekranaBas(allMedia); // Ve hemen ekrana bas
-
+        yillariDoldur(); // Yılları aralık olarak doldur
+        ekranaBas(allMedia); 
     } catch (hata) {
-        console.error('Veri çekilemedi:', hata);
-        mediaContainer.innerHTML = '<h2>Veriler yüklenirken bir hata oluştu :(</h2>';
+        console.error('Hata:', hata);
+        mediaContainer.innerHTML = '<h2>Veriler yüklenirken hata oluştu.</h2>';
     }
 }
 
-// 2. ADIM: Verileri HTML kartlarına dönüştürüp ekrana basan fonksiyon
-function ekranaBas(liste) {
-    mediaContainer.innerHTML = ''; // Önce ekranı temizle
+// --- YENİ: Yılları Aralık Olarak Doldurma ---
+function yillariDoldur() {
+    // Mevcut içeriği temizle ama "Tüm Yıllar" kalsın
+    yearFilter.innerHTML = '<option value="all">Tüm Zamanlar</option>';
 
-    // Liste boşsa uyarı ver
+    // Aralıkları biz belirliyoruz
+    const donemler = [
+        { etiket: "2020 ve Sonrası", min: 2020, max: 9999 },
+        { etiket: "2010 - 2019", min: 2010, max: 2019 },
+        { etiket: "2000 - 2009", min: 2000, max: 2009 },
+        { etiket: "1990 - 1999", min: 1990, max: 1999 },
+        { etiket: "Eskiler (1990 Öncesi)", min: 0, max: 1989 }
+    ];
+
+    donemler.forEach(donem => {
+        const option = document.createElement('option');
+        // Value kısmına min ve max değerlerini gizlice koyuyoruz (ör: "2010-2019")
+        option.value = `${donem.min}-${donem.max}`;
+        option.textContent = donem.etiket;
+        yearFilter.appendChild(option);
+    });
+}
+
+// Ekrana Basma
+function ekranaBas(liste) {
+    mediaContainer.innerHTML = '';
+
     if (liste.length === 0) {
-        mediaContainer.innerHTML = '<h2>Aradığınız kriterde içerik bulunamadı.</h2>';
+        mediaContainer.innerHTML = '<h2 style="grid-column: 1/-1; text-align:center; color:#777;">Bu kriterde içerik bulunamadı :(</h2>';
         return;
     }
 
-    // Her bir medya (film/dizi) için döngü kuruyoruz
     liste.forEach(medya => {
-        // Yeni bir kart kutusu oluştur
         const kart = document.createElement('div');
         kart.classList.add('card');
         
-        // Kartın içine resim ve yazılarını doldur
+        const puanRenk = medya.puan >= 8 ? '#46d369' : (medya.puan >= 6 ? '#ffd700' : '#e50914');
+
         kart.innerHTML = `
-            <img src="${medya.poster}" alt="${medya.baslik}">
+            <img src="${medya.poster}" alt="${medya.baslik}" onerror="this.src='https://via.placeholder.com/300x450?text=Resim+Yok'">
             <div class="card-info">
                 <h3>${medya.baslik}</h3>
                 <div class="meta">
                     <span>${medya.yil}</span>
                     <span>${medya.tur}</span>
-                    <span class="rating">★ ${medya.puan}</span>
+                    <span style="color:${puanRenk}">★ ${medya.puan}</span>
                 </div>
             </div>
         `;
 
-        // Karta tıklanınca detayı aç (Modal)
         kart.addEventListener('click', () => detayGoster(medya));
-
-        // Hazırladığımız kartı ana sahneye koy
         mediaContainer.appendChild(kart);
     });
 }
 
-// 3. ADIM: Filtreleme Butonlarının Çalışması
-filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        // Önce hepsinden "active" sınıfını kaldır
-        filterBtns.forEach(b => b.classList.remove('active'));
-        // Tıklanan butona "active" ekle
-        btn.classList.add('active');
-
-        const kategori = btn.getAttribute('data-category');
-
-        if (kategori === 'all') {
-            ekranaBas(allMedia); // Hepsini göster
-        } else {
-            // Sadece kategorisi uyanları filtrele
-            const filtrelenmis = allMedia.filter(item => item.tur === kategori);
-            ekranaBas(filtrelenmis);
-        }
-    });
-});
-
-// 4. ADIM: Arama Kutusu Mantığı
-searchInput.addEventListener('input', (e) => {
-    const aranan = e.target.value.toLowerCase(); // Yazılanı küçük harfe çevir
-
-    const filtrelenmis = allMedia.filter(item => 
-        item.baslik.toLowerCase().includes(aranan)
-    );
-
-    ekranaBas(filtrelenmis);
-});
-
-// 5. ADIM: Detay Penceresini (Modal) Doldurma ve Açma
+// Detay Penceresi (Modal)
 function detayGoster(medya) {
-    // Oyuncuları HTML listesine çevir
-    let oyuncularHTML = '';
+    const yaraticiBaslik = medya.tur === 'Kitap' ? 'Yazar' : 'Yönetmen';
+    const yaraticiBilgi = medya.tur === 'Kitap' ? medya.yazar : medya.yonetmen;
+
+    let kadroHTML = '';
     if (medya.oyuncular && medya.oyuncular.length > 0) {
-        oyuncularHTML = medya.oyuncular.map(oyuncu => `
-            <div class="cast-member">
-                <img src="${oyuncu.foto}" alt="${oyuncu.ad}">
-                <p>${oyuncu.ad}</p>
+        kadroHTML = medya.oyuncular.map(kisi => `
+            <div class="cast-member" onclick="kisiyeGoreFiltrele('${kisi.ad}')" style="cursor:pointer" title="${kisi.ad}">
+                <img src="${kisi.foto}" alt="${kisi.ad}" onerror="this.src='https://ui-avatars.com/api/?name=${kisi.ad}&background=random'">
+                <p>${kisi.ad}</p>
             </div>
         `).join('');
     }
 
-    // Modalın içini doldur
     modalBody.innerHTML = `
         <div class="modal-left">
             <img src="${medya.poster}" alt="${medya.baslik}">
@@ -119,37 +104,79 @@ function detayGoster(medya) {
                 <span>${medya.tur}</span>
                 <span style="color:#46d369">★ ${medya.puan}</span>
             </div>
-            <p>${medya.ozet}</p>
+            <p class="ozet">${medya.ozet}</p>
             
-            <h3>Yönetmen</h3>
-            <div class="cast-list">
-                 <div class="cast-member">
-                    <img src="${medya.yonetmen.foto}" alt="${medya.yonetmen.ad}">
-                    <p>${medya.yonetmen.ad}</p>
+            <div class="creator-section" onclick="kisiyeGoreFiltrele('${yaraticiBilgi.ad}')" style="cursor:pointer; margin-top:20px;">
+                <h3>${yaraticiBaslik}</h3>
+                <div class="cast-list">
+                     <div class="cast-member">
+                        <img src="${yaraticiBilgi.foto}" alt="${yaraticiBilgi.ad}" onerror="this.src='https://ui-avatars.com/api/?name=${yaraticiBilgi.ad}&background=random'">
+                        <p>${yaraticiBilgi.ad}</p>
+                    </div>
                 </div>
             </div>
 
-            <h3>Oyuncular</h3>
-            <div class="cast-list">
-                ${oyuncularHTML}
-            </div>
+            ${kadroHTML ? `<h3>Kadro / Karakterler</h3><div class="cast-list">${kadroHTML}</div>` : ''}
         </div>
     `;
 
-    // Modalı görünür yap
     modal.style.display = 'flex';
 }
 
-// Modalı Kapatma İşlemleri
-closeBtn.addEventListener('click', () => {
+function kisiyeGoreFiltrele(isim) {
     modal.style.display = 'none';
-});
+    searchInput.value = isim;
+    aramaYap(isim);
+}
 
-window.addEventListener('click', (e) => {
-    if (e.target === modal) {
-        modal.style.display = 'none';
+function aramaYap(arananMetin) {
+    const term = arananMetin.toLowerCase();
+    
+    const filtrelenmis = allMedia.filter(item => {
+        const baslikVar = item.baslik.toLowerCase().includes(term);
+        const yaraticiVar = (item.yonetmen && item.yonetmen.ad.toLowerCase().includes(term)) || 
+                            (item.yazar && item.yazar.ad.toLowerCase().includes(term));
+        const oyuncuVar = item.oyuncular && item.oyuncular.some(o => o.ad.toLowerCase().includes(term));
+
+        return baslikVar || yaraticiVar || oyuncuVar;
+    });
+
+    ekranaBas(filtrelenmis);
+}
+
+// --- YENİ: Yıl Filtreleme Mantığı (Aralığa Göre) ---
+yearFilter.addEventListener('change', (e) => {
+    const secilen = e.target.value;
+
+    if (secilen === 'all') {
+        ekranaBas(allMedia);
+    } else {
+        // Value "2010-2019" gibi geliyor, tireden bölüp sayıya çeviriyoruz
+        const [min, max] = secilen.split('-').map(Number);
+        
+        // Medyanın yılı bu aralıkta mı diye bakıyoruz
+        const filtrelenmis = allMedia.filter(item => item.yil >= min && item.yil <= max);
+        ekranaBas(filtrelenmis);
     }
 });
 
-// Sayfa ilk açıldığında verileri çekmeye başla
+searchInput.addEventListener('input', (e) => aramaYap(e.target.value));
+
+filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const kategori = btn.getAttribute('data-category');
+        
+        if (kategori === 'all') {
+            ekranaBas(allMedia);
+        } else {
+            ekranaBas(allMedia.filter(item => item.tur === kategori));
+        }
+    });
+});
+
+closeBtn.addEventListener('click', () => modal.style.display = 'none');
+window.addEventListener('click', (e) => { if (e.target === modal) modal.style.display = 'none'; });
+
 verileriGetir();
