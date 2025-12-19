@@ -6,7 +6,6 @@
     <title>Visionary Media</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="manifest" href="manifest.json">
 </head>
 <body>
 
@@ -34,8 +33,8 @@
         </button>
     </nav>
 
-    <main id="mediaContainer">
-        </main>
+    <div id="loadingSpinner" class="loader"></div>
+<main id="mediaContainer">...</main>
 
     <div id="modal" class="modal">
         <div class="modal-content">
@@ -49,15 +48,7 @@
         <p>&copy; 2025 MyMedia - Şevval Koca</p>
     </footer>
 
-    <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('./sw.js')
-            .then((reg) => console.log('Service Worker Yüklendi!'))
-            .catch((err) => console.log('Service Worker Hatası:', err));
-        });
-      }
-    </script>
+ 
     <script src="script.js"></script>
 </body>
 </html>

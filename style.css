@@ -117,25 +117,39 @@ main {
 }
 
 /* 5. KART TASARIMI */
+/* 5. KART TASARIMI */
 .card {
+    /* ... (Diğer özellikleriniz aynı kalsın) ... */
+    position: relative;
     background-color: #222;
     border-radius: 8px;
-    overflow: hidden;
-    position: relative;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    
+    /* Geçiş efektinin hem pozisyon (transform) hem gölge (box-shadow) için çalışmasını sağla */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
+/* GÜNCELLENEN KISIM BURASI */
 .card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+    /* 1. translateY(-10px): Kart 10 piksel yukarı kalkar
+       2. scale(1.05): Kart %5 oranında büyür (öne çıkar) */
+    transform: translateY(-10px) scale(1.05);
+    
+    /* Kartın diğer kartların üzerinde görünmesi için z-index'i artır */
     z-index: 10;
+    
+    /* Kırmızı Çizgi ve Neon Glow Efekti (Önceki isteğiniz) */
+    border-color: #e50914;
+    box-shadow: 0 0 15px rgba(229, 9, 20, 0.6), 
+                0 0 30px rgba(229, 9, 20, 0.3);
 }
 
+/* Resim ayarları (Zoom efektini istemediğiniz için sade bıraktık) */
 .card img {
     width: 100%;
     height: 300px;
     object-fit: cover;
+    /* Zoom efektini kaldırdık, sadece olduğu gibi duracak */
 }
 
 .card-info { padding: 12px; }
@@ -176,6 +190,11 @@ main {
 }
 .fav-icon:hover { transform: scale(1.1); color: white; }
 .fav-icon.active { color: #e50914; text-shadow: 0 0 10px red; }
+.filter-btn:active, 
+.back-btn:active, 
+#searchBtn:active {
+    transform: scale(0.95); /* Tıklanma anında %5 küçült */
+}
 
 /* 6. MODAL (PENCERE) - GÜNCELLENMİŞ TASARIM */
 .modal {
@@ -396,4 +415,38 @@ footer {
     .cast-list { justify-content: center; }
     .modal-tags { justify-content: center; }
     .creator-section { margin: 0 auto; } /* Mobilde ortala */
+}
+
+/* Kartların giriş animasyonu */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px); /* Aşağıdan başla */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Yerine otur */
+    }
+}
+
+.card {
+    /* Başlangıçta görünmez olsun */
+    opacity: 0; 
+    /* Animasyon tanımla ama delay'i JS ile vereceğiz */
+    animation: fadeInUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+.loader {
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    border-left-color: #e50914; /* Kırmızı renk */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 50px auto;
+    display: none; /* Başlangıçta gizli */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }

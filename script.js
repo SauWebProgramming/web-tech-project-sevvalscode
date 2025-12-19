@@ -10,8 +10,17 @@ let allMedia = [];
 let favoriler = JSON.parse(localStorage.getItem('favoriler')) || [];
 
 // 1. VERİLERİ GETİR
+const loader = document.getElementById('loadingSpinner');
+
 async function verileriGetir() {
+    // Yükleme başladığında loader'ı göster
+    loader.style.display = 'block';
+    mediaContainer.style.opacity = '0.5'; // İçeriği biraz soluklaştır
+
     try {
+        // Yapay bir gecikme ekleyerek loader'ın göründüğünden emin olabiliriz (isteğe bağlı)
+        // await new Promise(r => setTimeout(r, 800)); 
+        
         const cevap = await fetch('data.json');
         const veri = await cevap.json();
         allMedia = veri;
@@ -19,7 +28,11 @@ async function verileriGetir() {
         ekranaBas(allMedia); 
     } catch (hata) {
         console.error('Hata:', hata);
-        mediaContainer.innerHTML = '<h2 class="no-content">Veriler yüklenirken hata oluştu.</h2>';
+        mediaContainer.innerHTML = '<h2 class="no-content">Hata oluştu.</h2>';
+    } finally {
+        // İşlem bitince (başarılı veya hatalı) loader'ı gizle
+        loader.style.display = 'none';
+        mediaContainer.style.opacity = '1';
     }
 }
 
@@ -42,30 +55,38 @@ function yillariDoldur() {
 }
 
 // 3. EKRANA BASMA
+// script.js içindeki ekranaBas fonksiyonunun güncellenmiş hali:
 function ekranaBas(liste) {
     mediaContainer.innerHTML = '';
     if (liste.length === 0) {
-        // Inline style yerine class kullanıldı
         mediaContainer.innerHTML = '<h3 class="no-content">İçerik bulunamadı.</h3>';
         return;
     }
 
-    liste.forEach(medya => {
-        const kart = document.createElement('article'); // div yerine semantic element
+    // index parametresini ekledik
+    liste.forEach((medya, index) => { 
+        const kart = document.createElement('article');
         kart.classList.add('card');
         
+        // --- YENİ EKLENEN KISIM: Animasyon Gecikmesi ---
+        // Her kart bir öncekinden 0.1 saniye sonra gelsin.
+        // En fazla 2 saniye gecikme olsun (çok eleman varsa kullanıcı beklemesin)
+        const delay = Math.min(index * 0.1, 2); 
+        kart.style.animationDelay = `${delay}s`;
+        // -----------------------------------------------
+
         const isFav = favoriler.includes(medya.id);
         const kalpSinifi = isFav ? 'fa-solid' : 'fa-regular'; 
         const aktifSinif = isFav ? 'active' : '';
         
-        // Puan rengini CSS class ile belirleme
         let puanClass = 'score-low';
         if (medya.puan >= 8) puanClass = 'score-high';
         else if (medya.puan >= 6) puanClass = 'score-medium';
 
         kart.innerHTML = `
             <i class="${kalpSinifi} fa-heart fav-icon ${aktifSinif}" onclick="favoriToggle(event, ${medya.id})"></i>
-            <img src="${medya.poster}" alt="${medya.baslik}" onerror="this.src='https://via.placeholder.com/300x450?text=Resim+Yok'">
+            <div class="img-wrapper"> <img src="${medya.poster}" alt="${medya.baslik}" loading="lazy" onerror="this.src='https://via.placeholder.com/300x450?text=Resim+Yok'">
+            </div>
             <div class="card-info">
                 <h3>${medya.baslik}</h3>
                 <div class="meta">
@@ -75,6 +96,7 @@ function ekranaBas(liste) {
                 </div>
             </div>
         `;
+        
         kart.addEventListener('click', (e) => {
             if (!e.target.classList.contains('fav-icon')) {
                 detayGoster(medya);
