@@ -1,142 +1,443 @@
 [
     {
         "id": 1,
-        "baslik": "Oppenheimer",
+        "baslik": "Inception",
         "tur": "Film",
-        "yil": 2023,
-        "puan": 8.5,
-        "poster": "https://image.tmdb.org/t/p/original/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg",
-        "ozet": "Amerikalı fizikçi J. Robert Oppenheimer'ın atom bombasının geliştirilmesindeki rolünü ve Manhattan Projesi sürecini konu alan biyografik bir başyapıt.",
-        "yonetmen": { "ad": "Christopher Nolan", "foto": "https://upload.wikimedia.org/wikipedia/commons/9/95/Christopher_Nolan_Cannes_2018.jpg" },
+        "yil": 2010,
+        "puan": 8.8,
+        "poster": "https://image.tmdb.org/t/p/original/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg",
+        "ozet": "Bilinçaltı hırsızı Dom Cobb, bu sefer bir fikri çalmak yerine, zihnin en derinlerine bir fikir yerleştirmek (inception) zorundadır.",
+        "yonetmen": { "ad": "Christopher Nolan", "foto": "https://image.tmdb.org/t/p/original/xuAIuYSmsUzKlUMBFGVZaWsY3VD.jpg" },
         "oyuncular": [
-            { "ad": "Cillian Murphy", "foto": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Cillian_Murphy_Press_Conference_The_Party_Berlinale_2017_02cr.jpg" },
-            { "ad": "Robert Downey Jr.", "foto": "https://upload.wikimedia.org/wikipedia/commons/9/94/Robert_Downey_Jr_2014_Comic_Con_%28cropped%29.jpg" },
-            { "ad": "Emily Blunt", "foto": "https://upload.wikimedia.org/wikipedia/commons/3/36/Emily_Blunt_SXSW_2018.jpg" }
+            { "ad": "Leonardo DiCaprio", "foto": "https://image.tmdb.org/t/p/original/wo2hJpn04vbtmh0B9utCFdsQhxM.jpg" },
+            { "ad": "Cillian Murphy", "foto": "https://image.tmdb.org/t/p/original/3WdC4n5W5e5f6g7h8i9j0k1l.jpg" },
+            { "ad": "Tom Hardy", "foto": "https://image.tmdb.org/t/p/original/yVgfB8mP6r2rQ3y2dZ1f6m9fQ.jpg" }
         ]
     },
     {
         "id": 2,
+        "baslik": "Oppenheimer",
+        "tur": "Film",
+        "yil": 2023,
+        "puan": 8.6,
+        "poster": "https://image.tmdb.org/t/p/original/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg",
+        "ozet": "Amerikalı fizikçi J. Robert Oppenheimer'ın atom bombasının geliştirilmesindeki rolünü ve Manhattan Projesi sürecini konu alan biyografik başyapıt.",
+        "yonetmen": { "ad": "Christopher Nolan", "foto": "https://image.tmdb.org/t/p/original/xuAIuYSmsUzKlUMBFGVZaWsY3VD.jpg" },
+        "oyuncular": [
+            { "ad": "Cillian Murphy", "foto": "https://image.tmdb.org/t/p/original/3WdC4n5W5e5f6g7h8i9j0k1l.jpg" },
+            { "ad": "Robert Downey Jr.", "foto": "https://image.tmdb.org/t/p/original/im9SAqJPZKEbVZGjAdLI7ja7n7F.jpg" },
+            { "ad": "Emily Blunt", "foto": "https://image.tmdb.org/t/p/original/k5W5e5f6g7h8i9j0k1l.jpg" }
+        ]
+    },
+    {
+        "id": 3,
+        "baslik": "Breaking Bad",
+        "tur": "Dizi",
+        "yil": 2008,
+        "puan": 9.5,
+        "poster": "https://image.tmdb.org/t/p/original/ggFHVNu6YYI5L9pCfOacjizRGt.jpg",
+        "ozet": "Kanser teşhisi konan kimya öğretmeni Walter White, ailesinin geleceği için eski öğrencisi Jesse ile uyuşturucu ticaretine girer.",
+        "yonetmen": { "ad": "Vince Gilligan", "foto": "https://image.tmdb.org/t/p/original/z3sWdC4n5W5e5f6g7h8i9j0k1l.jpg" },
+        "oyuncular": [
+            { "ad": "Bryan Cranston", "foto": "https://image.tmdb.org/t/p/original/7JHYpTdgvVg5bO6f7f8f9h0k1l.jpg" },
+            { "ad": "Aaron Paul", "foto": "https://image.tmdb.org/t/p/original/u8UdsB9kqnT9cQ7f8g7h6i5j4k.jpg" },
+            { "ad": "Bob Odenkirk", "foto": "https://image.tmdb.org/t/p/original/rUsn4V9w7w9f8g7h8i9j0k1l.jpg" }
+        ]
+    },
+    {
+        "id": 4,
+        "baslik": "Better Call Saul",
+        "tur": "Dizi",
+        "yil": 2015,
+        "puan": 8.9,
+        "poster": "https://image.tmdb.org/t/p/original/fC2HDm5t0kHl7mTm7jxMR31b7by.jpg",
+        "ozet": "Breaking Bad'den öncesini anlatan dizide, avukat Jimmy McGill'in ahlaki çöküşü ve Saul Goodman'a dönüşüm süreci işleniyor.",
+        "yonetmen": { "ad": "Vince Gilligan", "foto": "https://image.tmdb.org/t/p/original/z3sWdC4n5W5e5f6g7h8i9j0k1l.jpg" },
+        "oyuncular": [
+            { "ad": "Bob Odenkirk", "foto": "https://image.tmdb.org/t/p/original/rUsn4V9w7w9f8g7h8i9j0k1l.jpg" },
+            { "ad": "Jonathan Banks", "foto": "https://image.tmdb.org/t/p/original/wz3MRiMmoz6b5X3o.jpg" },
+            { "ad": "Rhea Seehorn", "foto": "https://image.tmdb.org/t/p/original/adG7f8h5f6g7h8i9j0k1l.jpg" }
+        ]
+    },
+    {
+        "id": 5,
+        "baslik": "The Dark Knight",
+        "tur": "Film",
+        "yil": 2008,
+        "puan": 9.0,
+        "poster": "https://image.tmdb.org/t/p/original/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+        "ozet": "Batman, Gotham'ı kaosa sürükleyen Joker ile fiziksel ve psikolojik bir savaşa girerken ahlaki sınırlarını zorlar.",
+        "yonetmen": { "ad": "Christopher Nolan", "foto": "https://image.tmdb.org/t/p/original/xuAIuYSmsUzKlUMBFGVZaWsY3VD.jpg" },
+        "oyuncular": [
+            { "ad": "Christian Bale", "foto": "https://image.tmdb.org/t/p/original/b7fTC9OTJ6bfENILLp5w8.jpg" },
+            { "ad": "Heath Ledger", "foto": "https://image.tmdb.org/t/p/original/5Y9HnAuWagG6jP7y6.jpg" },
+            { "ad": "Morgan Freeman", "foto": "https://image.tmdb.org/t/p/original/oIciQWr8VwKoR8TmAw.jpg" }
+        ]
+    },
+    {
+        "id": 6,
+        "baslik": "Se7en",
+        "tur": "Film",
+        "yil": 1995,
+        "puan": 8.6,
+        "poster": "https://image.tmdb.org/t/p/original/6yoghtyTpznpBik8EngEmJskVUO.jpg",
+        "ozet": "Biri emekliliğe hazırlanan, diğeri genç ve fevri iki dedektif, yedi ölümcül günahı işleyenleri hedef alan bir seri katilin peşine düşer.",
+        "yonetmen": { "ad": "David Fincher", "foto": "https://image.tmdb.org/t/p/original/tLelKoPNiyJCSEtQTz1.jpg" },
+        "oyuncular": [
+            { "ad": "Brad Pitt", "foto": "https://image.tmdb.org/t/p/original/wz3MRiMmoz6b5X3o.jpg" },
+            { "ad": "Morgan Freeman", "foto": "https://image.tmdb.org/t/p/original/oIciQWr8VwKoR8TmAw.jpg" },
+            { "ad": "Kevin Spacey", "foto": "https://image.tmdb.org/t/p/original/8M5w7w9f8g7h8i9j0k1l.jpg" }
+        ]
+    },
+    {
+        "id": 7,
+        "baslik": "Fight Club",
+        "tur": "Film",
+        "yil": 1999,
+        "puan": 8.8,
+        "poster": "https://image.tmdb.org/t/p/original/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg",
+        "ozet": "Uykusuzluk çeken bir ofis çalışanı ve karizmatik sabun üreticisi Tyler Durden, yeraltında bir dövüş kulübü kurarlar.",
+        "yonetmen": { "ad": "David Fincher", "foto": "https://image.tmdb.org/t/p/original/tLelKoPNiyJCSEtQTz1.jpg" },
+        "oyuncular": [
+            { "ad": "Brad Pitt", "foto": "https://image.tmdb.org/t/p/original/wz3MRiMmoz6b5X3o.jpg" },
+            { "ad": "Edward Norton", "foto": "https://image.tmdb.org/t/p/original/5Y9HnAuWagG6jP7y6.jpg" },
+            { "ad": "Helena Bonham Carter", "foto": "https://image.tmdb.org/t/p/original/7JHYpTdgvVg5bO6f7f8f9h0k1l.jpg" }
+        ]
+    },
+    {
+        "id": 8,
+        "baslik": "Pulp Fiction",
+        "tur": "Film",
+        "yil": 1994,
+        "puan": 8.9,
+        "poster": "https://image.tmdb.org/t/p/original/d5iIlFn5s0ImszYzBPb8JPIfbXD.jpg",
+        "ozet": "Tarantino'nun kült filminde tetikçiler, bir boksör ve bir gangsterin karısının yolları şiddet dolu ve ironik bir şekilde kesişir.",
+        "yonetmen": { "ad": "Quentin Tarantino", "foto": "https://image.tmdb.org/t/p/original/1kcX529sL5w5e5f6g7h8i9j0k1l.jpg" },
+        "oyuncular": [
+            { "ad": "John Travolta", "foto": "https://image.tmdb.org/t/p/original/sHnwD5w5e5f6g7h8i9j0k1l.jpg" },
+            { "ad": "Samuel L. Jackson", "foto": "https://image.tmdb.org/t/p/original/mXnwD5w5e5f6g7h8i9j0k1l.jpg" },
+            { "ad": "Uma Thurman", "foto": "https://image.tmdb.org/t/p/original/fHnwD5w5e5f6g7h8i9j0k1l.jpg" }
+        ]
+    },
+    {
+        "id": 9,
+        "baslik": "Django Unchained",
+        "tur": "Film",
+        "yil": 2012,
+        "puan": 8.4,
+        "poster": "https://image.tmdb.org/t/p/original/7oWY8VDWW7thTzWh3OKYRkWUlD5.jpg",
+        "ozet": "Özgürlüğüne kavuşan köle Django, karısını acımasız bir çiftlik sahibinin elinden kurtarmak için Alman bir ödül avcısıyla işbirliği yapar.",
+        "yonetmen": { "ad": "Quentin Tarantino", "foto": "https://image.tmdb.org/t/p/original/1kcX529sL5w5e5f6g7h8i9j0k1l.jpg" },
+        "oyuncular": [
+            { "ad": "Jamie Foxx", "foto": "https://image.tmdb.org/t/p/original/hPwCMEq6jLAidsXq592G8D.jpg" },
+            { "ad": "Leonardo DiCaprio", "foto": "https://image.tmdb.org/t/p/original/wo2hJpn04vbtmh0B9utCFdsQhxM.jpg" },
+            { "ad": "Samuel L. Jackson", "foto": "https://image.tmdb.org/t/p/original/mXnwD5w5e5f6g7h8i9j0k1l.jpg" }
+        ]
+    },
+    {
+        "id": 10,
+        "baslik": "Interstellar",
+        "tur": "Film",
+        "yil": 2014,
+        "puan": 8.7,
+        "poster": "https://image.tmdb.org/t/p/original/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
+        "ozet": "Dünya yaşanmaz hale gelirken bir grup astronot, insanlık için yeni bir yuva bulmak amacıyla solucan deliğinden geçer.",
+        "yonetmen": { "ad": "Christopher Nolan", "foto": "https://image.tmdb.org/t/p/original/xuAIuYSmsUzKlUMBFGVZaWsY3VD.jpg" },
+        "oyuncular": [
+            { "ad": "Matthew McConaughey", "foto": "https://image.tmdb.org/t/p/original/sY2m2M37m6.jpg" },
+            { "ad": "Anne Hathaway", "foto": "https://image.tmdb.org/t/p/original/tLelKoPNiyJCSEtQTz1.jpg" },
+            { "ad": "Jessica Chastain", "foto": "https://image.tmdb.org/t/p/original/adG7f8h5f6g7h8i9j0k1l.jpg" }
+        ]
+    },
+    {
+        "id": 11,
+        "baslik": "The Wolf of Wall Street",
+        "tur": "Film",
+        "yil": 2013,
+        "puan": 8.2,
+        "poster": "https://m.media-amazon.com/images/M/MV5BMjIxMjgxNTk0MF5BMl5BanBnXkFtZTgwNjIyOTg2MDE@._V1_FMjpg_UX1000_.jpg",
+        "ozet": "Jordan Belfort'un borsadaki yükselişini, lüks yaşamını ve yozlaşarak çöküşünü anlatan gerçek bir hikaye.",
+        "yonetmen": { "ad": "Martin Scorsese", "foto": "https://image.tmdb.org/t/p/original/9U9Y5GQuWX3EZy39B8nkk4NY01S.jpg" },
+        "oyuncular": [
+            { "ad": "Leonardo DiCaprio", "foto": "https://image.tmdb.org/t/p/original/wo2hJpn04vbtmh0B9utCFdsQhxM.jpg" },
+            { "ad": "Jonah Hill", "foto": "https://image.tmdb.org/t/p/original/c5M7oY.jpg" },
+            { "ad": "Margot Robbie", "foto": "https://image.tmdb.org/t/p/original/pbSz7d1aURy88mYGenPxTqbyo.jpg" }
+        ]
+    },
+    {
+        "id": 12,
+        "baslik": "Avengers: Endgame",
+        "tur": "Film",
+        "yil": 2019,
+        "puan": 8.4,
+        "poster": "https://image.tmdb.org/t/p/original/or06FN3Dka5tukK1e9sl16pB3iy.jpg",
+        "ozet": "Thanos'un evrenin yarısını yok etmesinden sonra, kalan Yenilmezler her şeyi düzeltmek için son bir şans için bir araya gelirler.",
+        "yonetmen": { "ad": "Russo Brothers", "foto": "https://ui-avatars.com/api/?name=Russo+Bros" },
+        "oyuncular": [
+            { "ad": "Robert Downey Jr.", "foto": "https://image.tmdb.org/t/p/original/im9SAqJPZKEbVZGjAdLI7ja7n7F.jpg" },
+            { "ad": "Chris Evans", "foto": "https://image.tmdb.org/t/p/original/3bOGNsHlrswhyW79uvIHH1V43JI.jpg" },
+            { "ad": "Scarlett Johansson", "foto": "https://image.tmdb.org/t/p/original/6NsMbJXRlDGC6yrOnaMzq8WWcatch.jpg" }
+        ]
+    },
+    {
+        "id": 13,
+        "baslik": "Game of Thrones",
+        "tur": "Dizi",
+        "yil": 2011,
+        "puan": 8.4,
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTNhMDJmNmYtNDQ5OS00ODdlLWE0ZDAtZTgyYTIwNDY3OTU3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        "ozet": "Westeros'un Yedi Krallığı'nda soylu aileler Demir Taht için savaşırken, kuzeyde kadim bir düşman uyanmaktadır.",
+        "yonetmen": { "ad": "David Benioff", "foto": "https://image.tmdb.org/t/p/original/8M5w7w9f8g7h8i9j0k1l.jpg" },
+        "oyuncular": [
+            { "ad": "Emilia Clarke", "foto": "https://image.tmdb.org/t/p/original/rUsn4V9w7w9f8g7h8i9j0k1l.jpg" },
+            { "ad": "Kit Harington", "foto": "https://image.tmdb.org/t/p/original/4M5w7w9f8g7h8i9j0k1l.jpg" },
+            { "ad": "Peter Dinklage", "foto": "https://image.tmdb.org/t/p/original/lRsRgnksAhBRXwAB68Gy7.jpg" }
+        ]
+    },
+    {
+        "id": 14,
+        "baslik": "Sherlock",
+        "tur": "Dizi",
+        "yil": 2010,
+        "puan": 9.1,
+        "poster": "https://image.tmdb.org/t/p/original/7WTsnHkbA0FaG6R9twfFde0I9hl.jpg",
+        "ozet": "Modern Londra'da, eksantrik dedektif Sherlock Holmes ve ortağı Dr. Watson gizemli suçları çözerler.",
+        "yonetmen": { "ad": "Mark Gatiss", "foto": "https://image.tmdb.org/t/p/original/sHnwD5w5e5f6g7h8i9j0k1l.jpg" },
+        "oyuncular": [
+            { "ad": "Benedict Cumberbatch", "foto": "https://image.tmdb.org/t/p/original/wz3MRiMmoz6b5X3o.jpg" },
+            { "ad": "Martin Freeman", "foto": "https://image.tmdb.org/t/p/original/adG7f8h5f6g7h8i9j0k1l.jpg" },
+            { "ad": "Andrew Scott", "foto": "https://image.tmdb.org/t/p/original/8M5w7w9f8g7h8i9j0k1l.jpg" }
+        ]
+    },
+    {
+        "id": 15,
         "baslik": "Dune: Part Two",
         "tur": "Film",
         "yil": 2024,
         "puan": 8.8,
         "poster": "https://image.tmdb.org/t/p/original/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg",
-        "ozet": "Paul Atreides, ailesini yok eden komploculara karşı intikam savaşı başlatırken Chani ve Fremenlerle güçlerini birleştirir.",
+        "ozet": "Paul Atreides, ailesini yok edenlerden intikam almak için Fremenlerle birleşir ve evrenin kaderini değiştirecek bir savaşa girer.",
         "yonetmen": { "ad": "Denis Villeneuve", "foto": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Denis_Villeneuve_by_Gage_Skidmore.jpg" },
         "oyuncular": [
             { "ad": "Timothée Chalamet", "foto": "https://upload.wikimedia.org/wikipedia/commons/0/07/Timoth%C3%A9e_Chalamet_2019.jpg" },
-            { "ad": "Zendaya", "foto": "https://upload.wikimedia.org/wikipedia/commons/2/28/Zendaya_-_2019_by_Glenn_Francis.jpg" }
+            { "ad": "Zendaya", "foto": "https://upload.wikimedia.org/wikipedia/commons/2/28/Zendaya_-_2019_by_Glenn_Francis.jpg" },
+            { "ad": "Austin Butler", "foto": "https://image.tmdb.org/t/p/original/2gY92j27.jpg" }
         ]
     },
     {
-        "id": 3,
+        "id": 16,
+        "baslik": "The Matrix",
+        "tur": "Film",
+        "yil": 1999,
+        "puan": 8.7,
+        "poster": "https://image.tmdb.org/t/p/original/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg",
+        "ozet": "Hacker Neo, yaşadığı dünyanın bir simülasyon olduğunu keşfeder ve insanlığı makinelerin boyunduruğundan kurtarmak için seçilmiş kişi olur.",
+        "yonetmen": { "ad": "Lana Wachowski", "foto": "https://image.tmdb.org/t/p/original/8M5w7w9f8g7h8i9j0k1l.jpg" },
+        "oyuncular": [
+            { "ad": "Keanu Reeves", "foto": "https://image.tmdb.org/t/p/original/rUsn4V9w7w9f8g7h8i9j0k1l.jpg" },
+            { "ad": "Laurence Fishburne", "foto": "https://image.tmdb.org/t/p/original/8M5w7w9f8g7h8i9j0k1l.jpg" },
+            { "ad": "Carrie-Anne Moss", "foto": "https://image.tmdb.org/t/p/original/w8M5w7w9f8g7h8i9j0k1l.jpg" }
+        ]
+    },
+    {
+        "id": 17,
+        "baslik": "Stranger Things",
+        "tur": "Dizi",
+        "yil": 2016,
+        "puan": 8.7,
+        "poster": "https://image.tmdb.org/t/p/original/49WJfeN0moxb9IPfGn8AIqMGskD.jpg",
+        "ozet": "1980'lerde, kaybolan bir çocuğu arayan arkadaşları, gizli hükümet deneyleri ve doğaüstü güçlerle dolu bir gizemi ortaya çıkarır.",
+        "yonetmen": { "ad": "Duffer Brothers", "foto": "https://ui-avatars.com/api/?name=Duffer+Brothers" },
+        "oyuncular": [
+            { "ad": "Millie Bobby Brown", "foto": "https://image.tmdb.org/t/p/original/2v9FVVBBkgTkTP4B7.jpg" },
+            { "ad": "Finn Wolfhard", "foto": "https://image.tmdb.org/t/p/original/5Y9HnAuWagG6jP7y6.jpg" },
+            { "ad": "Winona Ryder", "foto": "https://image.tmdb.org/t/p/original/adG7f8h5f6g7h8i9j0k1l.jpg" }
+        ]
+    },
+    {
+        "id": 18,
+        "baslik": "The Last of Us",
+        "tur": "Dizi",
+        "yil": 2023,
+        "puan": 8.6,
+        "poster": "https://image.tmdb.org/t/p/original/uKvVjHNqB5VmOrdxqAt2F7J78ED.jpg",
+        "ozet": "Salgın sonrası dünyada Joel, insanlığın tek umudu olabilecek 14 yaşındaki Ellie'yi tehlikeli bir yolculukta korumak zorundadır.",
+        "yonetmen": { "ad": "Neil Druckmann", "foto": "https://image.tmdb.org/t/p/original/rUsn4V9w7w9f8g7h8i9j0k1l.jpg" },
+        "oyuncular": [
+            { "ad": "Pedro Pascal", "foto": "https://image.tmdb.org/t/p/original/d5iIlFn5s0ImszYzBPb8JPIfbXD.jpg" },
+            { "ad": "Bella Ramsey", "foto": "https://image.tmdb.org/t/p/original/tLelKoPNiyJCSEtQTz1.jpg" },
+            { "ad": "Nick Offerman", "foto": "https://image.tmdb.org/t/p/original/7JHYpTdgvVg5bO6f7f8f9h0k1l.jpg" }
+        ]
+    },
+    {
+        "id": 19,
+        "baslik": "Yüzüklerin Efendisi: Yüzük Kardeşliği",
+        "tur": "Film",
+        "yil": 2001,
+        "puan": 8.9,
+        "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZO4THeWn7tZoNs7K42w3tV6xioF-t9FKdBg&s",
+        "ozet": "Frodo ve arkadaşları, Orta Dünya'yı ele geçirmek isteyen Sauron'un Tek Yüzüğü'nü yok etmek için tehlikeli bir yolculuğa çıkar.",
+        "yonetmen": { "ad": "Peter Jackson", "foto": "https://image.tmdb.org/t/p/original/4M5w7w9f8g7h8i9j0k1l.jpg" },
+        "oyuncular": [
+            { "ad": "Elijah Wood", "foto": "https://image.tmdb.org/t/p/original/7JHYpTdgvVg5bO6f7f8f9h0k1l.jpg" },
+            { "ad": "Ian McKellen", "foto": "https://image.tmdb.org/t/p/original/5Y9HnAuWagG6jP7y6.jpg" },
+            { "ad": "Viggo Mortensen", "foto": "https://image.tmdb.org/t/p/original/vH5gVspLmzLkZtzdDMcjN6qL7Zp.jpg" }
+        ]
+    },
+    {
+        "id": 20,
+        "baslik": "Yüzüklerin Efendisi: Kralın Dönüşü",
+        "tur": "Film",
+        "yil": 2003,
+        "puan": 9.0,
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTZkMjBjNWMtZGI5OC00MGU0LTk4ZTItODg2NWM3NTVmNWQ4XkEyXkFqcGc@._V1_.jpg",
+        "ozet": "Sauron'un orduları Minas Tirith'i kuşatırken, Frodo ve Sam Yüzüğü yok etmek için Hüküm Dağı'na yaklaşmaktadır.",
+        "yonetmen": { "ad": "Peter Jackson", "foto": "https://image.tmdb.org/t/p/original/4M5w7w9f8g7h8i9j0k1l.jpg" },
+        "oyuncular": [
+            { "ad": "Elijah Wood", "foto": "https://image.tmdb.org/t/p/original/7JHYpTdgvVg5bO6f7f8f9h0k1l.jpg" },
+            { "ad": "Ian McKellen", "foto": "https://image.tmdb.org/t/p/original/5Y9HnAuWagG6jP7y6.jpg" },
+            { "ad": "Orlando Bloom", "foto": "https://image.tmdb.org/t/p/original/amvmeQWheahG3Stq07MW8372nQw.jpg" }
+        ]
+    },
+    {
+        "id": 21,
         "baslik": "1984",
         "tur": "Kitap",
         "yil": 1949,
         "puan": 9.2,
-        "poster": "https://m.media-amazon.com/images/I/71NCJLPX2LL._AC_UF1000,1000_QL80_.jpg",
-        "ozet": "George Orwell'ın distopik romanı. Büyük Birader'in gözetimi altındaki totaliter bir rejimde, gerçeğin manipüle edildiği ve özgürlüğün yok edildiği bir dünyayı anlatır.",
+        "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYjcor8ng6aN3vVQz3PB2BL3DuBndqsH8kHw&s",
+        "ozet": "Büyük Birader'in her şeyi gözetlediği distopik bir gelecekte, Winston Smith sisteme karşı gelmeye ve gerçeği aramaya çalışır.",
         "yazar": { "ad": "George Orwell", "foto": "https://upload.wikimedia.org/wikipedia/commons/7/7e/George_Orwell_press_photo.jpg" },
         "oyuncular": [
-            { "ad": "Winston Smith (Karakter)", "foto": "https://ui-avatars.com/api/?name=Winston+Smith" },
-            { "ad": "Julia (Karakter)", "foto": "https://ui-avatars.com/api/?name=Julia" }
+            { "ad": "Winston Smith", "foto": "https://ui-avatars.com/api/?name=Winston+Smith&background=333&color=fff" },
+            { "ad": "Julia", "foto": "https://ui-avatars.com/api/?name=Julia&background=333&color=fff" }
         ]
     },
     {
-        "id": 4,
+        "id": 22,
+        "baslik": "Harry Potter ve Felsefe Taşı",
+        "tur": "Kitap",
+        "yil": 1997,
+        "puan": 8.9,
+        "poster": "https://m.media-amazon.com/images/I/81YOuOGFCJL._AC_UF1000,1000_QL80_.jpg",
+        "ozet": "Harry Potter, büyücü olduğunu öğrenir ve Hogwarts'ta büyülü bir dünyaya adım atarak karanlık geçmişiyle yüzleşir.",
+        "yazar": { "ad": "J.K. Rowling", "foto": "https://upload.wikimedia.org/wikipedia/commons/5/5d/J._K._Rowling_2010.jpg" },
+        "oyuncular": [
+            { "ad": "Harry Potter", "foto": "https://ui-avatars.com/api/?name=Harry+Potter&background=774422&color=fff" },
+            { "ad": "Hermione Granger", "foto": "https://ui-avatars.com/api/?name=Hermione+Granger&background=774422&color=fff" }
+        ]
+    },
+    {
+        "id": 23,
+        "baslik": "Simyacı",
+        "tur": "Kitap",
+        "yil": 1988,
+        "puan": 8.5,
+        "poster": "https://m.media-amazon.com/images/I/71aFt4+OTOL._AC_UF1000,1000_QL80_.jpg",
+        "ozet": "Çoban Santiago'nun Mısır Piramitleri'nde hazinesini ararken yaşadığı, hayatın anlamını sorgulatan masalsı yolculuk.",
+        "yazar": { "ad": "Paulo Coelho", "foto": "https://upload.wikimedia.org/wikipedia/commons/2/25/Paulo_Coelho_2011.jpg" },
+        "oyuncular": [
+            { "ad": "Santiago", "foto": "https://ui-avatars.com/api/?name=Santiago&background=orange&color=fff" },
+            { "ad": "Simyacı", "foto": "https://ui-avatars.com/api/?name=Simyaci&background=orange&color=fff" }
+        ]
+    },
+    {
+        "id": 24,
+        "baslik": "Kürk Mantolu Madonna",
+        "tur": "Kitap",
+        "yil": 1943,
+        "puan": 9.1,
+        "poster": "https://i.dr.com.tr/cache/600x600-0/originals/0000000058245-1.jpg",
+        "ozet": "Raif Efendi'nin Almanya'da bir sanat galerisinde gördüğü tabloya ve o kadına duyduğu melankolik ve derin aşk hikayesi.",
+        "yazar": { "ad": "Sabahattin Ali", "foto": "https://upload.wikimedia.org/wikipedia/commons/0/07/Sabahattin_Ali.jpg" },
+        "oyuncular": [
+            { "ad": "Raif Efendi", "foto": "https://ui-avatars.com/api/?name=Raif+Efendi&background=554433&color=fff" },
+            { "ad": "Maria Puder", "foto": "https://ui-avatars.com/api/?name=Maria+Puder&background=554433&color=fff" }
+        ]
+    },
+    {
+        "id": 25,
+        "baslik": "Suç ve Ceza",
+        "tur": "Kitap",
+        "yil": 1866,
+        "puan": 9.4,
+        "poster": "https://i.dr.com.tr/cache/600x600-0/originals/0000000222779-1.jpg",
+        "ozet": "Yoksul Raskolnikov'un işlediği cinayet sonrası yaşadığı vicdan azabı ve ahlaki çatışmalar.",
+        "yazar": { "ad": "Fyodor Dostoyevski", "foto": "https://upload.wikimedia.org/wikipedia/commons/7/78/Vasily_Perov_-_Portrait_of_Fyodor_Dostoyevsky_-_Google_Art_Project.jpg" },
+        "oyuncular": [
+            { "ad": "Raskolnikov", "foto": "https://ui-avatars.com/api/?name=Raskolnikov&background=550000&color=fff" },
+            { "ad": "Sonya", "foto": "https://ui-avatars.com/api/?name=Sonya&background=550000&color=fff" }
+        ]
+    },
+    {
+        "id": 26,
+        "baslik": "Spider-Man: Across the Spider-Verse",
+        "tur": "Film",
+        "yil": 2023,
+        "puan": 8.4,
+        "poster": "https://image.tmdb.org/t/p/original/8Vt6mWEReuy4Of61Lnj5Xj704m8.jpg",
+        "ozet": "Miles Morales, çoklu evrende diğer Örümcek-İnsanlarla bir araya gelir ancak kendi kaderini çizmek için onlarla çatışmak zorunda kalır.",
+        "yonetmen": { "ad": "Joaquim Dos Santos", "foto": "https://ui-avatars.com/api/?name=Joaquim+DS" },
+        "oyuncular": [
+            { "ad": "Shameik Moore", "foto": "https://image.tmdb.org/t/p/original/u8UdsB9kqnT9cQ7f8g7h6i5j4k.jpg" },
+            { "ad": "Hailee Steinfeld", "foto": "https://image.tmdb.org/t/p/original/p7f8h5f6g7h8i9j0k1l.jpg" },
+            { "ad": "Oscar Isaac", "foto": "https://image.tmdb.org/t/p/original/8M5w7w9f8g7h8i9j0k1l.jpg" }
+        ]
+    },
+    {
+        "id": 27,
+        "baslik": "Black Mirror",
+        "tur": "Dizi",
+        "yil": 2011,
+        "puan": 8.8,
+        "poster": "https://m.media-amazon.com/images/M/MV5BODcxMWI2NDMtYTc3NC00OTZjLWFmNmUtM2NmY2I1ODkxYzczXkEyXkFqcGc@._V1_.jpg",
+        "ozet": "Teknolojinin insan hayatını nasıl ele geçirdiğini ve distopik sonuçlarını her bölümde farklı bir hikayeyle anlatan antoloji.",
+        "yonetmen": { "ad": "Charlie Brooker", "foto": "https://image.tmdb.org/t/p/original/sHnwD5w5e5f6g7h8i9j0k1l.jpg" },
+        "oyuncular": [
+            { "ad": "Bryce Dallas Howard", "foto": "https://image.tmdb.org/t/p/original/adG7f8h5f6g7h8i9j0k1l.jpg" },
+            { "ad": "Jon Hamm", "foto": "https://image.tmdb.org/t/p/original/wz3MRiMmoz6b5X3o.jpg" }
+        ]
+    },
+    {
+        "id": 28,
+        "baslik": "Iron Man",
+        "tur": "Film",
+        "yil": 2008,
+        "puan": 7.9,
+        "poster": "https://image.tmdb.org/t/p/original/78lPtwv72eTNqFW9COBYI0dWDJa.jpg",
+        "ozet": "Milyarder silah üreticisi Tony Stark, kaçırıldıktan sonra zırhlı bir kostüm yaparak Iron Man'e dönüşür ve kötülerle savaşır.",
+        "yonetmen": { "ad": "Jon Favreau", "foto": "https://image.tmdb.org/t/p/original/8M5w7w9f8g7h8i9j0k1l.jpg" },
+        "oyuncular": [
+            { "ad": "Robert Downey Jr.", "foto": "https://image.tmdb.org/t/p/original/im9SAqJPZKEbVZGjAdLI7ja7n7F.jpg" },
+            { "ad": "Gwyneth Paltrow", "foto": "https://image.tmdb.org/t/p/original/slJ9o.jpg" },
+            { "ad": "Terrence Howard", "foto": "https://image.tmdb.org/t/p/original/3bOGNsHlrswhyW79uvIHH1V43JI.jpg" }
+        ]
+    },
+    {
+        "id": 29,
         "baslik": "The Queen's Gambit",
         "tur": "Dizi",
         "yil": 2020,
         "puan": 8.6,
         "poster": "https://m.media-amazon.com/images/M/MV5BM2EwMmRhMmUtMzBmMS00ZDQ3LTg4OGEtNjlkODk3ZTMxMmJlXkEyXkFqcGdeQXVyMjM5ODk1NDU@._V1_FMjpg_UX1000_.jpg",
-        "ozet": "Soğuk Savaş döneminde yetim bir satranç dâhisi olan Beth Harmon, dünyanın en iyi satranç oyuncusu olma yolunda bağımlılıklarıyla mücadele eder.",
+        "ozet": "Soğuk Savaş döneminde yetim bir satranç dâhisi olan Beth Harmon, dünyanın en iyi oyuncusu olma yolunda bağımlılıklarıyla savaşır.",
         "yonetmen": { "ad": "Scott Frank", "foto": "https://ui-avatars.com/api/?name=Scott+Frank" },
         "oyuncular": [
             { "ad": "Anya Taylor-Joy", "foto": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Anya_Taylor-Joy_2017.jpg" }
         ]
     },
     {
-        "id": 5,
+        "id": 30,
         "baslik": "Sefiller",
         "tur": "Kitap",
         "yil": 1862,
         "puan": 9.0,
-        "poster": "https://m.media-amazon.com/images/I/51r2n7-w1GL._AC_UF1000,1000_QL80_.jpg",
-        "ozet": "Victor Hugo'nun ölümsüz eseri. Jean Valjean'ın hapisten çıktıktan sonraki kefaret yolculuğunu ve Fransız Devrimi sırasındaki toplumsal mücadeleyi anlatır.",
+        "poster": "https://i.dr.com.tr/cache/600x600-0/originals/0000000623702-1.jpg",
+        "ozet": "Jean Valjean'ın hapisten çıktıktan sonraki kefaret yolculuğunu ve Fransız Devrimi sırasındaki toplumsal mücadeleyi anlatan destansı eser.",
         "yazar": { "ad": "Victor Hugo", "foto": "https://upload.wikimedia.org/wikipedia/commons/2/23/Victor_Hugo_001.jpg" },
         "oyuncular": [
             { "ad": "Jean Valjean", "foto": "https://ui-avatars.com/api/?name=J+V" },
             { "ad": "Cosette", "foto": "https://ui-avatars.com/api/?name=Cosette" }
-        ]
-    },
-    {
-        "id": 6,
-        "baslik": "Breaking Bad",
-        "tur": "Dizi",
-        "yil": 2008,
-        "puan": 9.5,
-        "poster": "https://m.media-amazon.com/images/M/MV5BYmQ4YWMxYjUtNjZmYi00MDQ1LWFhMjMtNjIxZDUwY2MwNjY2XkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_FMjpg_UX1000_.jpg",
-        "ozet": "Kanser teşhisi konan bir kimya öğretmeni, ailesinin geleceğini garanti altına almak için metamfetamin üretmeye başlar.",
-        "yonetmen": { "ad": "Vince Gilligan", "foto": "https://m.media-amazon.com/images/M/MV5BNzNlZTM4ODQtNDMzZC00Mzg1LWJjMTQtMjE5Y2Y1Nzk0YjY0XkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_FMjpg_UX1000_.jpg" },
-        "oyuncular": [
-            { "ad": "Bryan Cranston", "foto": "https://upload.wikimedia.org/wikipedia/commons/6/61/Bryan_Cranston_2018.jpg" },
-            { "ad": "Aaron Paul", "foto": "https://upload.wikimedia.org/wikipedia/commons/7/75/Aaron_Paul_by_Gage_Skidmore_3.jpg" }
-        ]
-    },
-    {
-        "id": 7,
-        "baslik": "Interstellar",
-        "tur": "Film",
-        "yil": 2014,
-        "puan": 8.7,
-        "poster": "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_FMjpg_UX1000_.jpg",
-        "ozet": "İnsanlığın sonu yaklaşırken bir grup astronot, yaşanabilir yeni bir gezegen bulmak için solucan deliğinden geçer.",
-        "yonetmen": { "ad": "Christopher Nolan", "foto": "https://upload.wikimedia.org/wikipedia/commons/9/95/Christopher_Nolan_Cannes_2018.jpg" },
-        "oyuncular": [
-            { "ad": "Matthew McConaughey", "foto": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Matthew_McConaughey_-_Goldene_Kamera_2014_-_Berlin.jpg" },
-            { "ad": "Anne Hathaway", "foto": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Anne_Hathaway_at_the_2013_Critics_Choice_Awards_%28cropped%29.jpg" }
-        ]
-    },
-    {
-        "id": 8,
-        "baslik": "Harry Potter ve Felsefe Taşı",
-        "tur": "Kitap",
-        "yil": 1997,
-        "puan": 8.9,
-        "poster": "https://m.media-amazon.com/images/I/81YOuOGFCJL._AC_UF1000,1000_QL80_.jpg",
-        "ozet": "Genç büyücü Harry Potter'ın Hogwarts Cadılık ve Büyücülük Okulu'ndaki ilk yılını ve karanlık büyücü Voldemort ile mücadelesini anlatır.",
-        "yazar": { "ad": "J.K. Rowling", "foto": "https://upload.wikimedia.org/wikipedia/commons/5/5d/J._K._Rowling_2010.jpg" },
-        "oyuncular": [
-            { "ad": "Harry Potter", "foto": "https://ui-avatars.com/api/?name=Harry+Potter" },
-            { "ad": "Hermione Granger", "foto": "https://ui-avatars.com/api/?name=Hermione+Granger" }
-        ]
-    },
-    {
-        "id": 9,
-        "baslik": "Stranger Things",
-        "tur": "Dizi",
-        "yil": 2016,
-        "puan": 8.7,
-        "poster": "https://m.media-amazon.com/images/M/MV5BMDZkYmVhNjMtNWU4MC00MDQxLWE3MjYtZGMzZWI1ZjhlOWJmXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_FMjpg_UX1000_.jpg",
-        "ozet": "1980'lerde Indiana'da bir çocuk kaybolur. Arkadaşları onu ararken gizli deneyler, doğaüstü güçler ve tuhaf bir kızla karşılaşırlar.",
-        "yonetmen": { "ad": "Duffer Brothers", "foto": "https://ui-avatars.com/api/?name=Duffer+Brothers" },
-        "oyuncular": [
-            { "ad": "Millie Bobby Brown", "foto": "https://upload.wikimedia.org/wikipedia/commons/9/91/Millie_Bobby_Brown_2018.jpg" },
-            { "ad": "Finn Wolfhard", "foto": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Finn_Wolfhard_2019.jpg" }
-        ]
-    },
-    {
-        "id": 10,
-        "baslik": "Yüzüklerin Efendisi: Yüzük Kardeşliği",
-        "tur": "Film",
-        "yil": 2001,
-        "puan": 8.9,
-        "poster": "https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_FMjpg_UX1000_.jpg",
-        "ozet": "Genç hobbit Frodo Baggins, Karanlık Lord Sauron'un yok edilmesi gereken Güç Yüzüğü'nü Hüküm Dağı'na götürmekle görevlendirilir.",
-        "yonetmen": { "ad": "Peter Jackson", "foto": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Peter_Jackson_SDCC_2014.jpg" },
-        "oyuncular": [
-            { "ad": "Elijah Wood", "foto": "https://upload.wikimedia.org/wikipedia/commons/4/42/Elijah_Wood_by_Gage_Skidmore_2.jpg" },
-            { "ad": "Ian McKellen", "foto": "https://upload.wikimedia.org/wikipedia/commons/1/15/Ian_McKellen_2013_SDCC_2.jpg" }
         ]
     }
 ]
