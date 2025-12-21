@@ -8,7 +8,12 @@ const yearFilter = document.getElementById('yearFilter');
 
 let allMedia = [];
 let favoriler = JSON.parse(localStorage.getItem('favoriler')) || [];
-
+const logo = document.querySelector('.logo');
+if (logo) {
+    logo.addEventListener('click', () => {
+        location.reload();
+    });
+}
 // 1. VERİLERİ GETİR
 const loader = document.getElementById('loadingSpinner');
 
@@ -35,6 +40,7 @@ async function verileriGetir() {
         mediaContainer.style.opacity = '1';
     }
 }
+
 
 // 2. YILLARI DOLDUR
 function yillariDoldur() {
